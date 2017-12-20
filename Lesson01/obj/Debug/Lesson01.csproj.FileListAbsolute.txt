@@ -1,0 +1,6 @@
+E:\Programming\Solutions\WebApiExamples\Lesson01\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Programming\Solutions\WebApiExamples\Lesson01\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Programming\Solutions\WebApiExamples\Lesson01\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Programming\Solutions\WebApiExamples\Lesson01\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Programming\Solutions\WebApiExamples\Lesson01\bin\roslyn\System.IO.Compression.dll
+E:\Programming\Solutions\WebApiExamples\Lesson01\bin\roslyn\VBCSCompiler.exe
