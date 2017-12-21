@@ -1,24 +1,31 @@
 ﻿using NLog;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
+using System;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Lesson01.Filters
 {
-    public class ControllerBasedLogFilterAttribute : ActionFilterAttribute
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+    public class ControllerBasedLogFilterAttribute : FilterAttribute, IActionFilter, IFilter
     {
-        Logger logger = LogManager.GetCurrentClassLogger();
-        public override void OnActionExecuting(HttpActionContext actionContext)
+        override public bool AllowMultiple => false;
+
+        public Task<HttpResponseMessage> ExecuteActionFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func<Task<HttpResponseMessage>> continuation)
         {
+            Logger logger = LogManager.GetCurrentClassLogger();
+
             logger.Warn($"[ControllerBased] : Controller Name: {actionContext.ActionDescriptor.ControllerDescriptor.ControllerName} " +
                 $"Action Name: {actionContext.ActionDescriptor.ActionName} -OnActionExecuting");
-            base.OnActionExecuting(actionContext);
-        }
 
-        public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
-        {
-            logger.Warn($"[ControllerBased] : Controller Name: {actionExecutedContext.ActionContext.ActionDescriptor.ControllerDescriptor.ControllerName} " +
-                $"Action Name: {actionExecutedContext.ActionContext.ActionDescriptor.ActionName} -OnActionExecuted");
-            base.OnActionExecuted(actionExecutedContext);
+            var response = continuation.Invoke();
+
+            logger.Info($"[ControllerBased] : Controller Name: {actionContext.ActionDescriptor.ControllerDescriptor.ControllerName} " +
+                $"Action Name: {actionContext.ActionDescriptor.ActionName} -OnActionExecuted");
+
+            return response;
         }
     }
 }

@@ -1,24 +1,35 @@
 ﻿using NLog;
+using System;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Lesson01.Filters
 {
-    public class ActionBasedLogFilterAttribute : ActionFilterAttribute
+    /// <summary>
+    /// Implementation from IActionFilter, IFilter
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Method,AllowMultiple = false,Inherited = false)]
+    public class ActionBasedLogFilterAttribute : Attribute, IActionFilter, IFilter
     {
-        Logger logger = LogManager.GetCurrentClassLogger();
-        public override void OnActionExecuting(HttpActionContext actionContext)
+        public bool AllowMultiple => false;
+        
+
+        public Task<HttpResponseMessage> ExecuteActionFilterAsync(HttpActionContext actionContext, CancellationToken cancellationToken, Func<Task<HttpResponseMessage>> continuation)
         {
+            Logger logger = LogManager.GetCurrentClassLogger();
+
             logger.Info($"[ActionBased] : Controller Name: {actionContext.ActionDescriptor.ControllerDescriptor.ControllerName} " +
                 $"Action Name: {actionContext.ActionDescriptor.ActionName} -OnActionExecuting");
-            base.OnActionExecuting(actionContext);
-        }
 
-        public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
-        {
-            logger.Info($"[ActionBased] : Controller Name: {actionExecutedContext.ActionContext.ActionDescriptor.ControllerDescriptor.ControllerName} " +
-                $"Action Name: {actionExecutedContext.ActionContext.ActionDescriptor.ActionName} -OnActionExecuted");
-            base.OnActionExecuted(actionExecutedContext);
+            var response = continuation.Invoke();
+
+            logger.Info($"[ActionBased] : Controller Name: {actionContext.ActionDescriptor.ControllerDescriptor.ControllerName} " +
+                $"Action Name: {actionContext.ActionDescriptor.ActionName} -OnActionExecuted");
+
+            return response;
         }
     }
 }

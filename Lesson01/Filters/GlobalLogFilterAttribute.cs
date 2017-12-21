@@ -1,9 +1,11 @@
 ﻿using NLog;
+using System;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
 namespace Lesson01.Filters
 {
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
     public class GlobalLogFilterAttribute : ActionFilterAttribute
     {
         Logger logger = LogManager.GetCurrentClassLogger();
