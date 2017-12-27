@@ -11,6 +11,8 @@ namespace Lesson01
             //filters configurations
 
             FilterConfig.Register(config);
+
+            FormatterConfig.Register(config);
         }
     }
 }
