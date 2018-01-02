@@ -8,6 +8,8 @@ namespace Lesson01
         {
             WebApiConfig.Register(config);
 
+            HandlerConfig.Register(config);
+
             //filters configurations
 
             FilterConfig.Register(config);

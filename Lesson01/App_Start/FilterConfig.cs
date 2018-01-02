@@ -8,6 +8,9 @@ namespace Lesson01
         static internal void Register(HttpConfiguration config)
         {
             config.Filters.Add(new GlobalLogFilterAttribute());
+
+            //model validating
+            config.Filters.Add(new ValidateModelAttribute());
         }
     }
 }

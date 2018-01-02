@@ -6,18 +6,17 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System.Web.Http.Results;
 
 namespace Lesson01.Controllers
 {
     [ControllerBasedLogFilter]
     public class PersonController : ApiController
     {
-
+        [CustomAuthorize]
         [ActionBasedLogFilter]
         public HttpResponseMessage Get()
         {
-            return Request.CreateResponse(HttpStatusCode.OK);
+            return Request.CreateResponse(HttpStatusCode.OK,"Developer");
         }
 
         [ActionBasedLogFilter]

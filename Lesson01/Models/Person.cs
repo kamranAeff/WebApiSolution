@@ -1,4 +1,6 @@
-﻿namespace Lesson01.Models
+﻿using System.ComponentModel;
+
+namespace Lesson01.Models
 {
     public class Person
     {

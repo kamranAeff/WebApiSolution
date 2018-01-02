@@ -88,19 +88,36 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\WebApiResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebApiResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\WebApiResource.en-US.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebApiResource.en-US.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\HandlerConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FormatterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Binders\ColorTypeConverter.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Filters\CustomAutherization.cs" />
     <Compile Include="Filters\GlobalLogFilterAttribute.cs" />
     <Compile Include="Filters\ControllerBasedLogFilterAttribute.cs" />
     <Compile Include="Filters\ActionBasedLogFilterAttribute.cs" />
+    <Compile Include="Filters\ValidateModelAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MessageHandlers\LocalizationMessageHandler.cs" />
+    <Compile Include="Models\Color.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utils\CollectionExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NLog.config">
@@ -116,7 +133,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="MessageHandlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\WebApiResource.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>WebApiResource.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\WebApiResource.en-US.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>WebApiResource.en-US.designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
