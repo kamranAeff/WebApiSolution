@@ -7,7 +7,7 @@ namespace Lesson01.MessageHandlers
 {
     public class LocalizationMessageHandler : DelegatingHandler
     {
-        private readonly List<string> _supportedLanguages = new List<string> { "az-Latin", "en-US" };
+        private readonly List<string> _supportedLanguages = new List<string> { "az-Latn", "en-US" };
 
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
