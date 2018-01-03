@@ -41,7 +41,7 @@ namespace Lesson01.Binders
 
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (typeof(string).IsInstanceOfType(destinationType))
+            if (typeof(string) == destinationType)
             {
                 var color = (Color)value;
                 return $"{color.Red},{color.Green},{color.Blue}";

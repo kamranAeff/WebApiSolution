@@ -120,7 +120,7 @@ namespace Lesson01.Controllers
 
 
 
-                return Ok(color.ToString());
+                return Ok(color);
         }
 
 
