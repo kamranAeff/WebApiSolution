@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Lesson01.Constants;
+using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,8 +8,6 @@ namespace Lesson01.MessageHandlers
 {
     public class LocalizationMessageHandler : DelegatingHandler
     {
-        private readonly List<string> _supportedLanguages = new List<string> { "az-Latn", "en-US" };
-
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             SetCulture(request);
@@ -18,14 +17,13 @@ namespace Lesson01.MessageHandlers
 
         private void SetCulture(HttpRequestMessage request)
         {
+            var supportedLanguages = Configurations.SupportedLanguages;
             foreach (var language in request.Headers.AcceptLanguage)
-            {
-                if (_supportedLanguages.Contains(language.Value))
+                if (supportedLanguages.Contains(language.Value))
                 {
                     Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language.Value);
                     break;
                 }
-            }
         }
     }
 }

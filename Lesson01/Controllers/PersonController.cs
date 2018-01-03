@@ -31,5 +31,21 @@ namespace Lesson01.Controllers
 
             return Request.CreateResponse<List<Person>>(HttpStatusCode.OK, list);
         }
+
+        /// <summary>
+        /// Send Request for HttpGet*
+        /// http://localhost:49146/api/Person/Developer
+        /// HeaderValues
+        /// {
+        /// Accept-Language : en-US                 /*default az-Latn*/
+        /// Accept : application/json
+        /// }
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public HttpResponseMessage Developer()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, Resources.WebApiResource.Programmer);
+        }
     }
 }

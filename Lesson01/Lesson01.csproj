@@ -98,6 +98,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WebApiResource.en-US.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\Constants\Configurations.cs" />
     <Compile Include="App_Start\HandlerConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FormatterConfig.cs" />

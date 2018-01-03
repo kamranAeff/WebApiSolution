@@ -120,4 +120,7 @@
   <data name="AutorizeErrorMessage" xml:space="preserve">
     <value>Unauthorized access is denied due to invalid credentials.</value>
   </data>
+  <data name="Programmer" xml:space="preserve">
+    <value>Programmer</value>
+  </data>
 </root>

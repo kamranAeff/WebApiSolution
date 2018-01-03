@@ -68,5 +68,14 @@ namespace Resources {
                 return ResourceManager.GetString("AutorizeErrorMessage", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proqramçı.
+        /// </summary>
+        internal static string Programmer {
+            get {
+                return ResourceManager.GetString("Programmer", resourceCulture);
+            }
+        }
     }
 }
