@@ -6,6 +6,10 @@ using System.Globalization;
 
 namespace Lesson01.Binders
 {
+    /// <summary>
+    /// TypeConverter bizə simple tipləri complex tiplərə çevirmək imkanı verir
+    /// Yəni string olaraq gələn 123,12,13 tipli RGB dəyərini ColorType-a çevirməyi bu üsulla yerinə yetirəcəyik.
+    /// </summary>
     public class ColorTypeConverter : TypeConverter
     {
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
