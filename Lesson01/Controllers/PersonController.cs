@@ -29,7 +29,9 @@ namespace Lesson01.Controllers
                 new Person("Pərviz","Eminov")
             };
 
-            return Request.CreateResponse<List<Person>>(HttpStatusCode.OK, list);
+            //return Request.CreateResponse<List<Person>>(HttpStatusCode.OK, list);
+
+            return Request.CreateResponse(HttpStatusCode.OK, list);
         }
 
         /// <summary>
