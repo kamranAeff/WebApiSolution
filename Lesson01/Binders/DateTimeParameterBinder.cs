@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lesson01.Utils;
+using System;
 using System.Globalization;
 using System.Linq;
 using System.Net.Http;
@@ -46,13 +47,9 @@ namespace Lesson01.Binders
             if (!string.IsNullOrEmpty(dateToParse))
             {
                 if (string.IsNullOrEmpty(DateFormat))
-                {
-                    dateTime = ParseDateTime(dateToParse);
-                }
+                    dateTime = dateToParse.ExtractDateFromString();
                 else
-                {
-                    dateTime = ParseDateTime(dateToParse, new string[] { DateFormat });
-                }
+                    dateTime = dateToParse.ExtractDateFromString(DateFormat);
             }
 
             SetValue(actionContext, dateTime);

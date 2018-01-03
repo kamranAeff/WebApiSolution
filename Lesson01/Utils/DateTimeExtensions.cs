@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Runtime.InteropServices;
 
 namespace Lesson01.Utils
 {
@@ -20,11 +21,20 @@ namespace Lesson01.Utils
                 };
 
 
-        public static DateTime? ExtractDateFromString(this string expression)
+        public static DateTime? ExtractDateFromString(this string expression,[Optional] string customFormat)
         {
+            if (string.IsNullOrWhiteSpace(customFormat))
+                return Parse(expression,formats);
+
+            return Parse(expression,new[]{ customFormat }); ;
+        }
+
+        static DateTime? Parse(string value, string[] format)
+        {
+
             DateTime date;
-            if (DateTime.TryParseExact(expression,
-                formats
+            if (DateTime.TryParseExact(value,
+                format
                 , System.Threading.Thread.CurrentThread.CurrentCulture
                 , DateTimeStyles.None, out date))
             {

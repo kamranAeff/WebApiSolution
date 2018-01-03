@@ -61,9 +61,9 @@ namespace Lesson01.Controllers
         /// <returns></returns>
         [Route("ValueDate/{date}")]
         [HttpGet]
-        public DateTime? ValueDate([DateTimeParameter] DateTime? date)
+        public IHttpActionResult ValueDate([DateTimeParameter] DateTime? date)
         {
-            return date;
+            return Ok(date.DateToText());
         }
 
         /// <summary>
@@ -73,9 +73,9 @@ namespace Lesson01.Controllers
         /// <returns></returns>
         [Route("ValueCustomDate/{date}")]
         [HttpGet]
-        public DateTime? ValueCustomDateFormat([DateTimeParameter(DateFormat = "dd_MM_yyyy")] DateTime? date)
+        public IHttpActionResult ValueCustomDateFormat([DateTimeParameter(DateFormat = "dd_MM_yyyy")] DateTime? date)
         {
-            return date;
+            return Ok(date.DateToText());
         }
 
         /// <summary>
