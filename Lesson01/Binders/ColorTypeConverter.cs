@@ -10,7 +10,7 @@ namespace Lesson01.Binders
     {
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
-            if (typeof(string).IsInstanceOfType(sourceType))
+            if (sourceType==typeof(string))
                 return true;
 
             return base.CanConvertFrom(context, sourceType);

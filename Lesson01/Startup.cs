@@ -14,7 +14,12 @@ namespace Lesson01
 
             FilterConfig.Register(config);
 
+            //formatter configurations
+
             FormatterConfig.Register(config);
+
+            //binders configurations
+            BinderConfig.Register(config);
         }
     }
 }
