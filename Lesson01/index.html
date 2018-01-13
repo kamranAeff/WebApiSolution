@@ -3,8 +3,71 @@
 <head>
     <meta charset="utf-8" />
     <title>LangLearn</title>
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+    <style>
+        #reload {
+            padding: 30px;
+            border: 1px solid #ccc;
+            background-color: aliceblue;
+            color: blueviolet;
+            display: block;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            margin: 5px 20px;
+            border-radius: 5px;
+        }
+
+        #dictionary {
+            width: 100%;
+            font-size:16pt;
+        }
+
+        #dictionary tr:nth-child(even) {
+            background: #CCC
+        }
+
+        #dictionary tr:nth-child(odd) {
+            background: #FFF
+        }
+    </style>
 </head>
 <body>
-OK!
-   </body>
+    <table border="1" id="dictionary">
+        <thead>
+            <tr>
+                <th>Az</th>
+                <th>En</th>
+                <th>Ru</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <a onclick="return loadQuestions();" id="reload">Davamı</a>
+    <script>
+        $(document).ready(loadQuestions);
+
+        function loadQuestions() {
+            $.ajax({
+                url: 'http://192.168.1.133/api/dictionary/random/10',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data, textStatus, xhr) {
+                    $.each(data, function () {
+                        $('#dictionary tbody').append('<tr data-id="' + this.id + '"><td>' + this.wordAz + '</td><td>' + this.wordEn + '</td><td>' + nullAsEmpty(this.wordRus) + '</td></tr>');
+                    });
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log('Error in Operation');
+                }
+            });
+        }
+
+        function nullAsEmpty(value) {
+            return (value == null || value === "") ? "" : value;
+        }
+
+
+    </script>
+</body>
 </html>
