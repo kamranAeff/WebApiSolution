@@ -20,6 +20,9 @@ namespace Lesson01
 
             //binders configurations
             BinderConfig.Register(config);
+
+            //mapper configurations
+            MapperConfig.Register(config);
         }
     }
 }

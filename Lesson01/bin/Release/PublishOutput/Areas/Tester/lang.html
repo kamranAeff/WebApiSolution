@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LangLearn</title>
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+    <style>
+        img {
+            background-size: cover;
+            width: 100%;
+        }
+
+        div.explain {
+            color: #0026ff;
+            display: block;
+        }
+
+        #reload {
+            padding: 30px;
+            border: 1px solid #ccc;
+            background-color: aliceblue;
+            color: blueviolet;
+            display: block;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            margin: 5px 20px;
+            border-radius: 5px;
+        }
+
+        #container {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <a onclick="return loadQuestions();" id="reload">Davamı</a>
+    <script>
+        $(document).ready(loadQuestions);
+
+        function loadQuestions() {
+            $.ajax({
+                url: 'http://192.168.1.133/api/dictionary/random/10',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data, textStatus, xhr) {
+                    $.each(data, function () {
+                        $('#container').append('<b>'+this.id+'.</b>');
+                        $('#container').append(
+                            this.wordAz + '<br/>'
+                            + this.wordEn + '<br/>'
+                            + this.wordRus + '<br/><hr/>');
+                    });
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log('Error in Operation');
+                }
+            });
+        }
+
+
+    </script>
+</body>
+</html>
