@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="add.html" />
+    <Content Include="css\style.css" />
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />

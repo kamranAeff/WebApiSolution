@@ -33,10 +33,13 @@ namespace Lesson01.Controllers
         [Route("add")]
         public IHttpActionResult AddWord(BookletOfTalkingDto word)
         {
+            if (string.IsNullOrWhiteSpace(word.WordAz) || (string.IsNullOrWhiteSpace(word.WordEn) && string.IsNullOrWhiteSpace(word.WordRus)))
+                return BadRequest();
+
             var bookletOfTalking = Mapper.Map<BookletOfTalking>(word);
             db.BookletOfTalking.Add(bookletOfTalking);
             db.SaveChanges();
-            return Ok();
+            return Ok(bookletOfTalking);
         }
 
         [HttpPut]

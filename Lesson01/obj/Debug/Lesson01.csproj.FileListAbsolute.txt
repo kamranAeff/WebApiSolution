@@ -52,6 +52,10 @@ C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\roslyn\vbc.exe
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\roslyn\vbc.exe.config
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\roslyn\vbc.rsp
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\NLog.config
+C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\Lesson01.dll.config
+C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\Lesson01.dll
+C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\Lesson01.pdb
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\Antlr3.Runtime.dll
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\AutoMapper.dll
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\EntityFramework.dll
@@ -88,6 +92,7 @@ C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\Newtonsoft.Json.xml
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\System.Net.Http.Formatting.xml
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\System.Web.Http.xml
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\System.Web.Http.WebHost.xml
+C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\obj\Debug\Lesson01.csprojResolveAssemblyReference.cache
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\obj\Debug\Lesson01.csproj.CoreCompileInputs.cache
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\obj\Debug\Lesson01.dll
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\obj\Debug\Lesson01.pdb

@@ -1,0 +1,58 @@
+﻿#reload {
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: aliceblue;
+    color: blueviolet;
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 5px 20px;
+    border-radius: 5px;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+        font-weight: bold;
+    }
+
+    .table td, .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+
+    .table .thead-dark th {
+        color: #fff;
+        background-color: #212529;
+        border-color: #32383e;
+    }
+
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+.table-striped th {
+    text-align: left;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+}
