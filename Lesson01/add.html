@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add-LangLearn</title>
+    <script src="../../Scripts/jquery-3.2.1.min.js"></script>
+    <style>
+        #reload {
+            padding: 30px;
+            border: 1px solid #ccc;
+            background-color: aliceblue;
+            color: blueviolet;
+            display: block;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            margin: 5px 20px;
+            border-radius: 5px;
+        }
+
+        .container textarea {
+            width: 100%;
+            resize:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label>
+            Az
+            <textarea id="wordAz" rows="5"></textarea>
+        </label>
+        <label>
+            En
+            <textarea id="wordEn" rows="5"></textarea>
+        </label>
+        <label>
+            Ru
+            <textarea id="wordRu" rows="5"></textarea>
+        </label>
+    </div>
+    <a onclick="return addWord();" id="reload">Əlavə et</a>
+    <script>
+        function addWord() {
+            var word= new Object();
+            word.wordAz = $('#wordAz').text();
+            word.wordEn = $('#wordEn').text();
+            word.wordRus = $('#wordRu').text();
+
+            $.ajax({
+                url: 'http://192.168.1.133/api/dictionary/add',
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify(word),
+                success: function (data, textStatus, xhr) {
+                    window.location = 'http://192.168.1.133';
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    console.log('Error in Operation');
+                }
+            });
+        }
+
+        function nullAsEmpty(value) {
+            return (value == null || value === "") ? "" : value;
+        }
+
+
+    </script>
+</body>
+</html>

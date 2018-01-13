@@ -19,6 +19,7 @@ namespace Lesson01.Models
 
         public string WordRus { get; set; }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Column(TypeName = "smalldatetime")]
         public DateTime? CreateDate { get; set; }
     }

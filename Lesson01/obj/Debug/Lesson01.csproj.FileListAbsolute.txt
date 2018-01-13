@@ -91,8 +91,3 @@ C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\System.Web.Http.Web
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\obj\Debug\Lesson01.csproj.CoreCompileInputs.cache
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\obj\Debug\Lesson01.dll
 C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\obj\Debug\Lesson01.pdb
-C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\NLog.config
-C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\Lesson01.dll.config
-C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\Lesson01.dll
-C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\bin\Lesson01.pdb
-C:\Users\KAMRAN\Documents\GitHub\WebApiSolution\Lesson01\obj\Debug\Lesson01.csprojResolveAssemblyReference.cache

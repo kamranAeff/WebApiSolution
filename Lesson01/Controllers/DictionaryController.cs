@@ -28,5 +28,28 @@ namespace Lesson01.Controllers
             var data = Mapper.Map<List<BookletOfTalkingDto>>(db.BookletOfTalking.OrderBy(r => Guid.NewGuid()).Take(top).ToList());
             return Ok(data);
         }
+
+        [HttpPost]
+        [Route("add")]
+        public IHttpActionResult AddWord(BookletOfTalkingDto word)
+        {
+            var bookletOfTalking = Mapper.Map<BookletOfTalking>(word);
+            db.BookletOfTalking.Add(bookletOfTalking);
+            db.SaveChanges();
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("edit")]
+        public IHttpActionResult EditWord(int id,BookletOfTalkingDto word)
+        {
+            var bookletOfTalking = Mapper.Map<BookletOfTalking>(word);
+            if (bookletOfTalking != null)
+            {
+                db.Entry(bookletOfTalking).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            return Ok(bookletOfTalking);
+        }
     }
 }
