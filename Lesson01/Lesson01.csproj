@@ -158,6 +158,7 @@
     <Compile Include="App_Start\FormatterConfig.cs" />
     <Compile Include="App_Start\MapperProfiles\DictionaryProfile.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Binders\LocationModelBinder.cs" />
     <Compile Include="Binders\ColorTypeConverter.cs" />
     <Compile Include="Binders\DateTimeModelBinder.cs" />
     <Compile Include="Binders\DateTimeModelBinderProvider.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Models\BookletOfTalking.cs" />
     <Compile Include="Models\Dto\BookletOfTalkingDto.cs" />
     <Compile Include="Models\LanguageLearnContext.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

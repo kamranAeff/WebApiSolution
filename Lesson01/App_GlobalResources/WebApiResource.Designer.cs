@@ -70,6 +70,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Xətalı Location dəyəri.
+        /// </summary>
+        internal static string InvalidLocationValue {
+            get {
+                return ResourceManager.GetString("InvalidLocationValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Proqramçı.
         /// </summary>
         internal static string Programmer {

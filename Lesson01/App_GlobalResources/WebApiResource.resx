@@ -120,6 +120,9 @@
   <data name="AutorizeErrorMessage" xml:space="preserve">
     <value>Yanlış kimlik məlumatları səbəbindən icazəsiz giriş qadağandır.</value>
   </data>
+  <data name="InvalidLocationValue" xml:space="preserve">
+    <value>Xətalı Location dəyəri</value>
+  </data>
   <data name="Programmer" xml:space="preserve">
     <value>Proqramçı</value>
   </data>

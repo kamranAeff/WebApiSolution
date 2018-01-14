@@ -9,6 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.ModelBinding;
 
 namespace Lesson01.Controllers
 {
@@ -121,6 +122,21 @@ namespace Lesson01.Controllers
 
 
                 return Ok(color);
+        }
+        
+        /// <summary>
+        /// http://localhost:49146/api/location/123,20,16
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        [Route("location/{location}")]
+        [HttpGet]
+        public IHttpActionResult LocationOne(Location location)
+        {
+            if (location == null)
+                return BadRequest();
+
+            return Ok(location);
         }
 
 

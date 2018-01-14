@@ -1,6 +1,8 @@
 ﻿using Lesson01.Binders;
+using Lesson01.Models;
 using System;
 using System.Web.Http;
+using System.Web.Http.ModelBinding.Binders;
 
 namespace Lesson01
 {
@@ -10,6 +12,10 @@ namespace Lesson01
         {
             config.BindParameter(typeof(DateTime), new DateTimeModelBinder());
             config.BindParameter(typeof(DateTime?), new DateTimeModelBinder());
+
+            //----------------------------
+
+            config.BindParameter(typeof(Location), new LocationModelBinder());
         }
     }
 }
