@@ -158,6 +158,8 @@
     <Compile Include="App_Start\FormatterConfig.cs" />
     <Compile Include="App_Start\MapperProfiles\DictionaryProfile.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Binders\HeaderValueProvider.cs" />
+    <Compile Include="Binders\HeaderValueProviderFactory.cs" />
     <Compile Include="Binders\LocationModelBinder.cs" />
     <Compile Include="Binders\ColorTypeConverter.cs" />
     <Compile Include="Binders\DateTimeModelBinder.cs" />

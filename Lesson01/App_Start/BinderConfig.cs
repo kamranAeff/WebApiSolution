@@ -13,8 +13,7 @@ namespace Lesson01
             config.BindParameter(typeof(DateTime?), new DateTimeModelBinder());
 
             //----------------------------
-
-            config.BindParameter(typeof(Location), new LocationModelBinder());
+            //config.BindParameter(typeof(Location), new LocationModelBinder());
         }
     }
 }

@@ -8,6 +8,9 @@ namespace Lesson01
         {
             WebApiConfig.Register(config);
 
+            //binders configurations
+            BinderConfig.Register(config);
+
             HandlerConfig.Register(config);
 
             //filters configurations
@@ -17,9 +20,6 @@ namespace Lesson01
             //formatter configurations
 
             FormatterConfig.Register(config);
-
-            //binders configurations
-            BinderConfig.Register(config);
 
             //mapper configurations
             MapperConfig.Register(config);

@@ -11,6 +11,11 @@
     border-radius: 5px;
 }
 
+.container textarea {
+    width: 100%;
+    resize: none;
+}
+
 *, ::after, ::before {
     box-sizing: border-box;
 }

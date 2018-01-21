@@ -1,6 +1,5 @@
 ﻿namespace Lesson01.Models
 {
-    //[ModelBinder(typeof(LocationModelBinder))]
     public class Location
     {
         public int X { get; set; }

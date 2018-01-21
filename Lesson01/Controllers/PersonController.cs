@@ -9,6 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Http.ValueProviders;
 
 namespace Lesson01.Controllers
 {
@@ -20,7 +21,7 @@ namespace Lesson01.Controllers
         [ActionBasedLogFilter]
         public HttpResponseMessage Get()
         {
-            return Request.CreateResponse(HttpStatusCode.OK,"Developer");
+            return Request.CreateResponse(HttpStatusCode.OK, "Developer");
         }
 
         [ActionBasedLogFilter]
@@ -120,9 +121,9 @@ namespace Lesson01.Controllers
 
 
 
-                return Ok(color);
+            return Ok(color);
         }
-        
+
         /// <summary>
         /// http://localhost:49146/api/location/123,20,16
         /// </summary>
@@ -131,6 +132,25 @@ namespace Lesson01.Controllers
         [Route("location/{location}")]
         [HttpGet]
         public IHttpActionResult LocationOne(Location location)
+        {
+            if (location == null)
+                return BadRequest();
+
+            return Ok(location);
+        }
+
+        /// <summary>
+        /// http://localhost:49146/api/location
+        /// </summary>
+        /// HEADER VALUES {
+        /// Accept : application/json
+        /// location:{"X":20,"Y":30,"Z":50}
+        /// }
+        /// <param name="location"></param>
+        /// <returns></returns>
+        [Route("location")]
+        [HttpGet]
+        public IHttpActionResult ValueProvider([ValueProvider(typeof(HeaderValueProviderFactory<Location>))] Location location)
         {
             if (location == null)
                 return BadRequest();
