@@ -10,10 +10,7 @@ namespace Lesson01.Binders
         where T : class
     {
         private readonly HttpRequestHeaders headers;
-
-        public HeaderValueProvider()
-        {
-        }
+        
         public HeaderValueProvider(HttpRequestHeaders headers)
         {
             this.headers = headers;
